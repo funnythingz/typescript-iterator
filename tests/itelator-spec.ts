@@ -4,7 +4,7 @@
 
 /// <reference path="../src/iterator.ts" />
 
-module HACKLE {
+module TEST {
 
     chai.should();
 

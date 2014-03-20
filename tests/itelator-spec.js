@@ -1,5 +1,5 @@
-var HACKLE;
-(function (HACKLE) {
+var TEST;
+(function (TEST) {
     chai.should();
 
     describe("Iterator", function () {
@@ -23,4 +23,4 @@ var HACKLE;
             });
         });
     });
-})(HACKLE || (HACKLE = {}));
+})(TEST || (TEST = {}));
