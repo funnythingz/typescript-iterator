@@ -5,6 +5,7 @@ var TEST;
     describe("Iterator", function () {
         it("create instance", function () {
             var iterator = new PATTERN.Iterator();
+
             iterator.should.be.instanceof(PATTERN.Iterator);
         });
 
@@ -19,6 +20,7 @@ var TEST;
                 while (iterator.hasNext()) {
                     iterator.toNext();
                 }
+
                 iterator.hasNext().should.be.false;
             });
         });

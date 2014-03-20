@@ -8,28 +8,36 @@ module TEST {
 
     chai.should();
 
-    describe("Iterator", function() {
+    describe("Iterator", () => {
 
-        it("create instance", function() {
+        it("create instance", () => {
+
             var iterator: PATTERN.Iterator = new PATTERN.Iterator();
+
             iterator.should.be.instanceof(PATTERN.Iterator);
+
         });
 
-
-        describe("use hasNext() & toNext()", function() {
+        describe("use hasNext() & toNext()", () => {
 
             var iterator: PATTERN.Iterator = new PATTERN.Iterator(10);
 
-            it("when start count", function() {
+            it("when start count", () => {
+
                 iterator.hasNext().should.be.true;
+
             });
 
-            it("when completed count", function() {
+            it("when completed count", () => {
+
                 while(iterator.hasNext()) {
                     iterator.toNext();
                 }
+
                 iterator.hasNext().should.be.false;
+
             });
+
         });
 
     });
