@@ -3,12 +3,12 @@ var TEST;
     chai.should();
 
     describe("Iterator", function () {
-        it("create instance of Iterator", function () {
+        it("create instance", function () {
             var iterator = new PATTERN.Iterator();
             iterator.should.be.instanceof(PATTERN.Iterator);
         });
 
-        describe("Iterator", function () {
+        describe("use hasNext() & toNext()", function () {
             var iterator = new PATTERN.Iterator(10);
 
             it("when start count", function () {

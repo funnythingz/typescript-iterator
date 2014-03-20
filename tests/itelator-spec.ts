@@ -10,13 +10,13 @@ module TEST {
 
     describe("Iterator", function() {
 
-        it("create instance of Iterator", function() {
+        it("create instance", function() {
             var iterator: PATTERN.Iterator = new PATTERN.Iterator();
             iterator.should.be.instanceof(PATTERN.Iterator);
         });
 
 
-        describe("Iterator", function() {
+        describe("use hasNext() & toNext()", function() {
 
             var iterator: PATTERN.Iterator = new PATTERN.Iterator(10);
 
