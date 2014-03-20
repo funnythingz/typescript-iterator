@@ -1,0 +1,17 @@
+{
+  "name": "Iterator",
+  "version": "0.0.0",
+  "description": "Iterator for TypeScript",
+  "author": "funnythingz",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-typescript": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-concat": "latest",
+    "testem": "~0.6.2",
+    "chai": "~1.9.0"
+  }
+}
