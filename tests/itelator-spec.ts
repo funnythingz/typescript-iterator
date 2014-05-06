@@ -20,7 +20,9 @@ module TEST {
 
         describe("use hasNext() & toNext()", () => {
 
-            var iterator: PATTERN.Iterator = new PATTERN.Iterator(10);
+            var names: Name[] = [new Name('hoge'), new Name('ahya'), new Name('hage')];
+
+            var iterator: PATTERN.Iterator = new PATTERN.Iterator<Name>(names);
 
             it("when start count", () => {
 
@@ -28,11 +30,15 @@ module TEST {
 
             });
 
-            it("when completed count", () => {
+            it("when iteration of object", () => {
 
                 while(iterator.hasNext()) {
-                    iterator.toNext();
+                    iterator.toNext().should.be.instanceof(Name);
                 }
+
+            });
+
+            it("when completed count", () => {
 
                 iterator.hasNext().should.be.false;
 
@@ -41,5 +47,9 @@ module TEST {
         });
 
     });
+
+    class Name {
+        constructor(public value: string) {}
+    }
 
 }
