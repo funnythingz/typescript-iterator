@@ -8,21 +8,25 @@ module TEST {
 
     chai.should();
 
+    class Name {
+        constructor(public value: string) {}
+    }
+
     describe("Iterator", () => {
 
         it("create instance", () => {
 
-            var iterator: PATTERN.Iterator = new PATTERN.Iterator();
+            var iterator: PATTERN.Iterator<any> = new PATTERN.Iterator<any>();
 
             iterator.should.be.instanceof(PATTERN.Iterator);
 
         });
 
-        describe("use hasNext() & toNext()", () => {
+        describe("use next() & hasNext()", () => {
 
             var names: Name[] = [new Name('hoge'), new Name('ahya'), new Name('hage')];
 
-            var iterator: PATTERN.Iterator = new PATTERN.Iterator<Name>(names);
+            var iterator: PATTERN.Iterator<Name> = new PATTERN.Iterator<Name>(names);
 
             it("when start count", () => {
 
@@ -33,7 +37,7 @@ module TEST {
             it("when iteration of object", () => {
 
                 while(iterator.hasNext()) {
-                    iterator.toNext().should.be.instanceof(Name);
+                    iterator.next().should.be.instanceof(Name);
                 }
 
             });
@@ -47,9 +51,5 @@ module TEST {
         });
 
     });
-
-    class Name {
-        constructor(public value: string) {}
-    }
 
 }
