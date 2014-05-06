@@ -11,15 +11,15 @@ var TEST;
 
     describe("Iterator", function () {
         it("create instance", function () {
-            var iterator = new PATTERN.Iterator();
+            var iterator = new Iterator();
 
-            iterator.should.be.instanceof(PATTERN.Iterator);
+            iterator.should.be.instanceof(Iterator);
         });
 
         describe("use next() & hasNext()", function () {
             var names = [new Name('hoge'), new Name('ahya'), new Name('hage')];
 
-            var iterator = new PATTERN.Iterator(names);
+            var iterator = new Iterator(names);
 
             it("when start count", function () {
                 iterator.hasNext().should.be.true;

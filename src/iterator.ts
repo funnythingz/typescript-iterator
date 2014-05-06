@@ -1,36 +1,32 @@
-module PATTERN {
+class Iterator<T> {
 
-    export class Iterator<T> {
+    private count: number = 0;
 
-        private count: number = 0;
+    constructor(private lists: T[] = null) {}
 
-        constructor(private lists: T[] = null) {}
+    hasNext(): boolean {
 
-        hasNext(): boolean {
-
-            if(this.count < this.lists.length) {
-                return true;
-            }
-
-            return false;
-
+        if(this.count < this.lists.length) {
+            return true;
         }
 
-        next(): T {
+        return false;
 
-            var result: T;
+    }
 
-            if(this.hasNext()) {
+    next(): T {
 
-                result = this.lists[this.count];
-                this.count += 1;
+        var result: T;
 
-                return result;
-            }
+        if(this.hasNext()) {
 
-            return null;
+            result = this.lists[this.count];
+            this.count += 1;
 
+            return result;
         }
+
+        return null;
 
     }
 

@@ -16,9 +16,9 @@ module TEST {
 
         it("create instance", () => {
 
-            var iterator: PATTERN.Iterator<any> = new PATTERN.Iterator<any>();
+            var iterator: Iterator<any> = new Iterator<any>();
 
-            iterator.should.be.instanceof(PATTERN.Iterator);
+            iterator.should.be.instanceof(Iterator);
 
         });
 
@@ -26,7 +26,7 @@ module TEST {
 
             var names: Name[] = [new Name('hoge'), new Name('ahya'), new Name('hage')];
 
-            var iterator: PATTERN.Iterator<Name> = new PATTERN.Iterator<Name>(names);
+            var iterator: Iterator<Name> = new Iterator<Name>(names);
 
             it("when start count", () => {
 
