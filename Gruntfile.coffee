@@ -27,7 +27,7 @@ module.exports = (grunt)->
         options:
           atBegin: true
 
-    clean: ['src/**/*.js']
+    clean: ['src/**/*.js', 'tests/**/*.js']
   })
 
   grunt.loadNpmTasks('grunt-typescript')
