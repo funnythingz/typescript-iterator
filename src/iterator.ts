@@ -2,7 +2,7 @@ class Iterator<T> {
 
     private count: number = 0;
 
-    constructor(private lists: T[] = null) {}
+    constructor(private lists: Array<T> = null) {}
 
     hasNext(): boolean {
 

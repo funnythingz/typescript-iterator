@@ -24,7 +24,7 @@ module TEST {
 
         describe("use next() & hasNext()", () => {
 
-            var names: Name[] = [new Name('hoge'), new Name('ahya'), new Name('hage')];
+            var names: Array<Name> = [new Name('hoge'), new Name('ahya'), new Name('hage')];
 
             var iterator: Iterator<Name> = new Iterator<Name>(names);
 

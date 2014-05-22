@@ -6,24 +6,22 @@ module.exports = (grunt)->
       dist:
         files: 'build/iterator.min.js': ['build/iterator.js']
 
-    concat:
-      dist:
-        src: ['src/**/*.js']
-        dest: 'build/iterator.js'
-
-      options:
-        separator: ';'
-
     typescript:
       base:
-        src: ['src/**/*.ts', 'tests/**/*.ts']
+        src: ['src/**/*.ts']
+        dest: 'build/iterator.js'
+        options:
+          sourceMap: false
+
+      test:
+        src: ['tests/**/*.ts']
         options:
           sourceMap: false
 
     watch:
       typescript:
         files: ['src/**/*.ts', 'tests/**/*.ts']
-        tasks: ['typescript', 'concat', 'uglify', 'clean']
+        tasks: ['typescript', 'uglify', 'clean']
         options:
           atBegin: true
 
@@ -31,9 +29,8 @@ module.exports = (grunt)->
   })
 
   grunt.loadNpmTasks('grunt-typescript')
-  grunt.loadNpmTasks('grunt-contrib-concat')
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-contrib-clean')
 
-  grunt.registerTask('default', ['typescript', 'concat', 'uglify', 'clean'])
+  grunt.registerTask('default', ['typescript', 'uglify', 'clean'])
