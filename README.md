@@ -1,7 +1,7 @@
 typescript-iterator
 ====================
 
-Iterator pattern of TypeScript
+Iterator pattern for TypeScript
 
 ## Usage
 
