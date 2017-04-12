@@ -47,6 +47,48 @@ module TEST {
                 iterator.hasNext().should.be.false;
 
             });
+            
+            describe("use equals()", () =>{
+                let arrayEnd: number[] = [10, 12, 14, 16, 18, 20];
+                let arrayEndFalse: number[] = [10, 12, 15, 16, 18, 20];
+                
+                let iterator:Iterator<number> = new Iterator<number>(arrayEnd);
+                let iteratorTrue:Iterator<number> = new Iterator<number>(arrayEnd);
+                let iteratorFalse:Iterator<number> = new Iterator<number>(arrayEndFalse);
+                
+                it("when both are equals", () => {
+
+                iterator.equals(iteratorTrue).should.be.true;
+
+                });
+                
+                it("when both are not equals", () => {
+
+                iterator.equals(iteratorFalse).should.be.false;
+
+                });
+            });
+            
+            describe("use remove()", () =>{
+
+                let iterator: Iterator<number> = new Iterator<number>([10,11,12,13,14,15,16,17,18,19,20]);
+                let iteratorPostSplice: Iterator<number> = new Iterator<number>([[10, 12, 14, 16, 18, 20]);
+
+                while (iterator.hasNext()) {
+
+                    let value = iterator.next();
+
+                    if (value % 2 !== 0) {
+                        iterator.remove();
+                    }
+                }
+                
+                it("when elements have been splice", () => {
+
+                iterator.equals(iteratorPostSplice).should.be.true;
+
+                });
+            });
 
         });
 
